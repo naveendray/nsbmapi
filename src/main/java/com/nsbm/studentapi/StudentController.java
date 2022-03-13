@@ -24,6 +24,10 @@ public class StudentController {
 
     @PostMapping(value = "/members",consumes = "application/json", produces = "application/json")
     public Student saveNewStudent(@RequestBody Student student){
+        // FileHandler fh;
+        // fh =new FileHandler("StudentController.log");
+        // logger.addHandler(fh);
+        logger.info("Successfully created  "+ student);
         return studentRepository.save(student);
     }
 
