@@ -1,5 +1,6 @@
 package com.nsbm.studentapi;
 
+import org.hibernate.annotations.SourceType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -58,6 +59,7 @@ public class StudentController {
 
     @GetMapping(value = "/allmembers")
     public Iterable<Student> getAllStudents(){
+        System.out.println("test-----");
         return studentRepository.findAll();
     }
 
