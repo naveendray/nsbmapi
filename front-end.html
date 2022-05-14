@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <title>Test page</title>
+</head>
+<div>
+  <input type="button" id="submit" name="submit" value="click meeeeee" />
+</div>
+
+<script>
+  // $("#submit").click(function() {
+  //     alert("test");
+  //   var flickerAPI = "http://127.0.0.1:8080/api/allmembers";
+  //   $.getJSON( flickerAPI, {
+  //     tags: "mount rainier",
+  //     tagmode: "any",
+  //     format: "json"
+  //   })
+  //     .done(function( data ) {
+  //       $.each( data.items, function( i, item ) {
+  //         alert(item);
+  //         if ( i === 3 ) {
+  //           return false;
+  //         }
+  //       });
+  //     });
+  // })();
+  $("#submit").click(function () {
+    $.get("http://localhost:8080/api/allmembers", function (data, status) {
+      console.log(data+"  ---------");
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+</script>
+
+</html>
