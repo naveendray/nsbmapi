@@ -29,8 +29,9 @@
   // })();
   $("#submit").click(function () {
     $.get("http://localhost:8080/api/allmembers", function (data, status) {
-      console.log(data+"  ---------");
-      alert("Data: " + data + "\nStatus: " + status);
+      data.forEach(element => {
+        console.log(Object.values(element));
+      });
     });
   });
 </script>
